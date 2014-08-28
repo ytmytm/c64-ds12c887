@@ -19,7 +19,7 @@ you might use /IO1 or /IO2 signals from Expansion Port, but I don't recommend it
 may cause problems with cartridges and REU.
 
 Here is Chris Ward's interface for DS1687 chip (similar to DS12C887), it was taken
-![from his page](http://home.freeuk.net/c.ward/6502/):
+[from his page](http://home.freeuk.net/c.ward/6502/):
 
 ![Ward's interface](/ds1687.png?raw=true)
 
@@ -54,7 +54,7 @@ BASE+0 and then read the data from BASE+1. To write something to RTC you first w
 to BASE+0 and then data to BASE+1. This chip has address space of 128 locations and you can put
 these values into BASE+0.
 
-I don't want to copy whole ![datasheet](http://pdfserv.maxim-ic.com/arpdf/DS12C887.pdf) here.
+I don't want to copy [whole datasheet](http://pdfserv.maxim-ic.com/arpdf/DS12C887.pdf) here.
 Local copy is included in this repo, better grab it and read it carefully.
 
 Here are some snippets of code. All of them assume that RTC base address is at $DE00 (line
