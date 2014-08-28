@@ -18,6 +18,12 @@ which will generate /RTC signal when proper I/O memory page is accessed. For ins
 you might use /IO1 or /IO2 signals from Expansion Port, but I don't recommend it as permanent as it
 may cause problems with cartridges and REU.
 
+Here is an example how such address decoder can be built by interfacing between SID and VIC. You need
+to pull SID and VIC chips, bend relevant pins and pass them through this extra 74'138. It will split the
+address space of VIC and SID into single pages. One of these /Dx00 signals may be /RTC you need.
+
+![c64 address decoder](/c64-address-decoder.png?raw=true)
+
 Here is Chris Ward's interface for DS1687 chip (similar to DS12C887), it was taken
 [from his page](http://home.freeuk.net/c.ward/6502/):
 
