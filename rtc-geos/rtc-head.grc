@@ -1,0 +1,7 @@
+
+HEADER AUTO_EXEC "RTC-Setup" "RTC-DS12C887" "V1.0" {
+dostype USR
+mode any
+author "Maciej Witkowiak"
+info "XXXX (first 4 characters in info are for base address of RTC chip - DS12C887)"
+}

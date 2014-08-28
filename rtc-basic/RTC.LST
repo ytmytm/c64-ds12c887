@@ -1,0 +1,39 @@
+
+
+RTC.BAS ==0801==
+  100 rem
+  101 rem this is example of using
+  102 rem ds12c887 from basic
+  103 rem
+  109 :
+  110 base=53760:rem base address of chip
+  115 :
+  230 rem get time from rtc
+  231 :
+  235 pokebase,4:h=peek(base+1)
+  240 pokebase,2:mi=peek(base+1)
+  245 pokebase,0:s=peek(base+1)
+  246 :
+  247 rem show what we have got
+  248 :
+  250 v=h:gosub1100:printv;":";
+  255 v=mi:gosub1100:printv;":";
+  260 v=s:gosub1100:printv
+  261 :
+  265 rem setup cia1 tod clock
+  266 :
+  270 pm=0:v=h:gosub1100:ifv<13then280
+  275 v=v-12:gosub1000:h=v
+  280 poke 56329,s
+  285 poke 56328,0
+  290 :
+  291 rem that's all folks
+  295 :
+  999 end
+ 1000 rem convert v to bcd, return in v
+ 1010 v=int(v/10)*16+(v-10*int(v/10))
+ 1020 return
+ 1100 rem convert v from bcd, return in v
+ 1110 v=int(v/16)*10+(v-16*int(v/16))
+ 1120 return
+

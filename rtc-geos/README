@@ -1,0 +1,43 @@
+
+LEGAL STUFF
+
+This is freeware, but you may not remove the author's name and origin of
+this software.
+
+REQUIRED HARDWARE AND SOFTWARE
+
+You need GEOS 2.0, 64 or 128 - doesn't matter.
+You need DS12C887 RTC chip, but with minor modifications this code should
+work with DS1687 RTC chip too (see rtclow.s for more info).
+
+BUILD
+
+Simply use included Makefile to build 'rtc.cvt' file - a file in Convert 2.5
+format ready to be unconverted using Convert 2.5 or simply copied onto a
+disk image with Star Commander.
+A ready for use binary is included here in bin/ directory.
+
+INSTRUCTION
+
+This is auto-exec - place it on your boot disk to execute it every time you
+run GEOS. If configured - the time and date will be set according to data
+from RTC chip.
+
+CONFIGURATION
+
+When run for the first time, RTC-Setup will ask you for base address of the
+RTC chip. The default value is D200 (that is, $D200), but you should supply
+the correct address. If e.g. /RTC line is connected to /IO2 then your address
+would be $DF00.
+After that you will be asked for date and time. Enter them with leading zeros
+(e.g. write '07' instead of '7').
+
+If for some reason you made mistake in entering base address of RTC or it has
+changed, you can change the configuration simply by entering the new address
+in info field of file header. In DeskTop use file->info option from menu
+while having RTC-Setup selected.
+
+http://members.elysium.pl/ytm/
+Maciej Witkowiak (YTM/Elysium)
+<ytm@elysium.pl>
+17.07.2002
